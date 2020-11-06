@@ -75,6 +75,37 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'],  function(){
         'uses' => 'TagsController@destroy',
         'as' => 'tag.delete'
     ]);
+    
+
+    //posts
+
+    Route::get('/post/create', [
+        'uses' => 'PostController@create',
+        'as' => 'post.create'
+    ]);
+    
+    Route::post('/post/store', [
+        'uses' => 'PostController@store',
+        'as' => 'post.store'
+    ]);
+
+    Route::get('/posts', [
+        'uses' => 'PostController@index',
+        'as' => 'posts'
+    ]);
+    Route::get('/posts/edit/{id}', [
+        'uses' => 'PostController@edit',
+        'as' => 'post.edit'
+    ]);
+    Route::post('/posts/update/{id}', [
+        'uses' => 'PostController@update',
+        'as' => 'post.update'
+    ]);
+
+	Route::get('/posts/delete/{id}', [
+        'uses' => 'PostController@destroy',
+        'as' => 'post.delete'
+    ]);
 
 
 });
