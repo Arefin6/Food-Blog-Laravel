@@ -110,6 +110,12 @@
                             <li class="list-group-item">
                                 <a href="{{ route('post.create') }}">Create new Post</a>
                             </li>
+                            <li class="list-group-item">
+                                <a href="{{ route('users') }}">All Users</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="{{ route('settings') }}">Settings</a>
+                            </li>
                             
                         
                             

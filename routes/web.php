@@ -23,6 +23,31 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'],  function(){
         'uses' => 'HomeController@index',
         'as' => 'home'
     ]);
+    //users
+
+    Route::get('/users', [
+        'uses' => 'HomeController@users',
+        'as' => 'users'
+    ]);
+    Route::get('/user/delete/{id}', [
+        'uses' => 'HomeController@userDelete',
+        'as' => 'user.delete'
+    ]);
+
+    //settings
+    Route::get('/settings',[
+		'uses'=>'SettingsController@index',
+		'as'=>'settings'
+		 
+	]);
+	
+   Route::Post('/settings/update',[
+	   
+		'uses'=>'settingsController@update',
+		'as'=>'settings.update'
+		 
+	]);
+
     //Category 
     Route::get('/category/create', [
         'uses' => 'CategoryController@create',
