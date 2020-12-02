@@ -11,9 +11,27 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [
+	
+    'uses' => 'FrontendController@index',
+
+    'as' => 'index'
+]);
+Route::get('/post/{slug}', [
+	
+    'uses' => 'FrontendController@singlepost',
+
+    'as' => 'post.single'
+]);
+Route::get('/category/{id}', [
+	
+    'uses' => 'FrontendController@category',
+
+    'as' => 'category.single'
+    
+]);
+
+
 
 Auth::routes();
 
