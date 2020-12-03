@@ -11,6 +11,26 @@
 |
 */
 
+Route::get('/result',function(){
+	
+    $posts= \App\Post :: where('title','like', '%'. request('search').'%')->get();
+   
+   
+   return view('results')->with('posts',$posts)
+   
+                         ->with('title','Search result :',request('search'))
+                             
+                         ->with('settings',\App\Settings::first())
+                        
+                         ->with('categories',\App\Category::take(4)->get())
+   
+                         ->with('search',request('search'));
+   
+   
+   
+       
+   });
+
 Route::get('/', [
 	
     'uses' => 'FrontendController@index',
@@ -30,6 +50,8 @@ Route::get('/category/{id}', [
     'as' => 'category.single'
     
 ]);
+
+
 
 
 

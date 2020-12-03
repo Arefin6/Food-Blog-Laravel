@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Tags;
+use App\Category;
 use Session;
 
 class TagsController extends Controller
@@ -115,5 +116,21 @@ class TagsController extends Controller
 			Session::flash('success','Tag Delete successfully.');
 		
 		return redirect()->back();
+    }
+
+    public function tag($id){
+
+        $tag = Tags::find($id);
+		
+		return view('tags')
+			
+			->with('tags', $tag)
+			
+			 ->with('title',$tag->tag)
+			                  
+             ->with('settings',Settings::first())
+
+             ->with('categories',Category::take(4)->get());
+					 
     }
 }
