@@ -3,7 +3,7 @@
                 <div class="header-content-wrapper">
                     <div class="logo">
                         <div class="logo-text">
-                            <div class="logo-title">Tech BLOG</div>
+                            <div class="logo-title">Food BLOG</div>
                         </div>
                     </div>
 

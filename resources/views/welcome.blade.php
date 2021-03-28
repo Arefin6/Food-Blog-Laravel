@@ -353,16 +353,6 @@
 		<!-- End Subscribe Form -->
 	</div>
 
-
-	<h1>Hello</h1>
-
-
-
-
-	
-
-
-
 	<!-- Footer -->
 	@include('admin.includes.footer')
 
